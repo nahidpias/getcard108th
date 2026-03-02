@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Iftar Mahfil 2026 | Premium Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0f1a;
+            --card-bg: rgba(16, 24, 45, 0.85);
+            --accent: #00ff88; /* Brighter Emerald */
+            --accent-glow: rgba(0, 255, 136, 0.4);
+            --gold: #ffd700; /* Brighter Gold */
+            --text-primary: #ffffff;
+            --text-secondary: #cbd5e1;
+            --font-bn: 'Hind Siliguri', sans-serif;
+            --font-en: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: var(--font-en);
+            background-color: var(--bg);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(0, 255, 136, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(255, 215, 0, 0.1) 0%, transparent 40%);
+        }
+
+        .glass {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 28px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        header {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        header h1 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: var(--font-en);
+        }
+
+        header p {
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .input-panel {
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .input-group label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            padding-left: 4px;
+            font-family: var(--font-bn);
+        }
+
+        input {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px 20px;
+            border-radius: 16px;
+            color: white;
+            font-size: 1.2rem;
+            outline: none;
+            transition: all 0.3s ease;
+            font-family: var(--font-en);
+            font-weight: 600;
+        }
+
+        input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px var(--accent-glow);
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .btn {
+            padding: 16px;
+            border-radius: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), #00d4ff);
+            color: #05070a;
+            box-shadow: 0 10px 20px -5px var(--accent-glow);
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -5px var(--accent-glow);
+            filter: brightness(1.1);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-secondary:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .preview-panel {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        #preview-container {
+            width: 100%;
+            aspect-ratio: 1/1;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 30px 60px -12px rgba(0,0,0,0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        #toast {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--accent);
+            color: #000;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            z-index: 1000;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.3);
+            white-space: nowrap;
+            font-family: var(--font-bn);
+        }
+
+        #toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        @media (max-width: 400px) {
+            .container { padding: 16px; }
+            header h1 { font-size: 1.4rem; }
+            .btn { padding: 14px; font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>IFTAR MAHFIL 2026</h1>
+            <p>Premium Invitation System</p>
+        </header>
+
+        <div class="input-panel glass">
+            <div class="input-group">
+                <label for="phone">আপনার ফোন নাম্বার দিন</label>
+                <input type="tel" id="phone" placeholder="01XXXXXXXXX" maxlength="11">
+            </div>
+            <button class="btn btn-primary" id="btn-generate">কার্ড তৈরি করুন</button>
+        </div>
+
+        <div class="preview-panel glass" id="preview-panel" style="display: none;">
+            <div id="preview-container">
+                <canvas id="card-canvas"></canvas>
+            </div>
+            
+            <div class="action-grid" style="width: 100%;">
+                <button class="btn btn-secondary" id="btn-jpg">4K JPG</button>
+                <button class="btn btn-secondary" id="btn-pdf">4K PDF</button>
+            </div>
+            <button class="btn btn-secondary" id="btn-reset" style="width: 100%; opacity: 0.6; font-size: 0.85rem;">রিসেট করুন</button>
+        </div>
+    </div>
+
+    <div id="toast"></div>
+
+    <script>
+        // Google Sheet CSV URL (আপনার পাবলিশ করা লিঙ্কটি এখানে দিন)
+        const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/156trWoeJQfDx6E-Gup7hEVhqWQJHRSX9e77LxZOTTTs/export?format=csv';
+
+        const EVENT_DETAILS = {
+            name: "Iftar Mahfil 2026",
+            datePlace: "18th March | Central Playground Of Jogotmoni",
+            organizedBy: "JMian 108th",
+            locationUrl: "https://maps.app.goo.gl/JogotmoniLocation"
+        };
+
+        const phoneInput = document.getElementById('phone');
+        const generateBtn = document.getElementById('btn-generate');
+        const resetBtn = document.getElementById('btn-reset');
+        const previewPanel = document.getElementById('preview-panel');
+        const canvas = document.getElementById('card-canvas');
+        const ctx = canvas.getContext('2d');
+        const toast = document.getElementById('toast');
+
+        let currentUserData = null;
+        let DATABASE = [];
+
+        // Sheet থেকে ডেটা ফেচ করার ফাংশন
+        async function loadDataFromSheet() {
+            try {
+                const response = await fetch(SHEET_CSV_URL);
+                const data = await response.text();
+                const rows = data.split('\n').slice(1); // Header রো বাদ দিয়ে
+
+                DATABASE = rows.map(row => {
+                    const cols = row.split(',');
+                    return {
+                        name: cols[0]?.trim(),
+                        phone: cols[1]?.trim(),
+                        group: cols[2]?.trim() || "JMian 108th",
+                        paymentStatus: cols[3]?.trim() || "Confirmed",
+                        vip: cols[4]?.toLowerCase().includes('true') || false
+                    };
+                });
+            } catch (err) {
+                showToast("ডেটা লোড করতে সমস্যা হয়েছে।");
+            }
+        }
+
+        // পেজ খুললেই ডেটা লোড হবে
+        loadDataFromSheet();
+
+        function showToast(msg) {
+            toast.innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        function generateID(name, phone) {
+            const prefix = (name.padEnd(3, 'X').substring(0, 3).toUpperCase());
+            const suffix = (phone.slice(-3).padStart(3, '0'));
+            return `${prefix}${suffix}108`;
+        }
+
+        function renderCard(data, size) {
+            canvas.width = size;
+            canvas.height = size;
+            const s = size / 1080;
+
+            // 1. Background
+            const grad = ctx.createRadialGradient(size/2, size/2, 0, size/2, size/2, size);
+            grad.addColorStop(0, "#1a2a4a");
+            grad.addColorStop(1, "#0a0f1a");
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, 0, size, size);
+
+            // Mesh Pattern
+            ctx.strokeStyle = "rgba(0, 255, 136, 0.08)";
+            ctx.lineWidth = 1.5 * s;
+            for(let i=0; i<size; i+=60*s) {
+                ctx.beginPath();
+                ctx.moveTo(i, 0); ctx.lineTo(i, size);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(0, i); ctx.lineTo(size, i);
+                ctx.stroke();
+            }
+
+            // Glowing Border
+            ctx.strokeStyle = "#00ff88";
+            ctx.lineWidth = 12 * s;
+            ctx.shadowBlur = 30 * s;
+            ctx.shadowColor = "rgba(0, 255, 136, 0.5)";
+            ctx.strokeRect(20*s, 20*s, size-40*s, size-40*s);
+            ctx.shadowBlur = 0;
+
+            // 2. Header
+            ctx.textAlign = "center";
+            ctx.fillStyle = "#ffd700";
+            ctx.font = `900 ${64*s}px 'Montserrat'`;
+            ctx.fillText("IFTAR MAHFIL 2026", size/2, 120*s);
+
+            ctx.fillStyle = "#00ff88";
+            ctx.font = `700 ${32*s}px 'Montserrat'`;
+            ctx.fillText(EVENT_DETAILS.datePlace.toUpperCase(), size/2, 175*s);
+
+            // 3. Greeting
+            ctx.fillStyle = "#ffffff";
+            ctx.font = `700 ${48*s}px 'Hind Siliguri'`;
+            ctx.fillText(`বন্ধু ${data.name},`, size/2, 270*s);
+
+            ctx.font = `500 ${32*s}px 'Hind Siliguri'`;
+            const lines = [
+                "পুরানো সেই দিনের কথা কি মনে পড়ে? চলো বন্ধু, আরও একবার সবাই মিলে",
+                "ইফতারের টেবিলে সেই সোনালী দিনগুলো খুঁজে ফিরি। তোমার অপেক্ষায় থাকবো।"
+            ];
+            ctx.fillText(lines[0], size/2, 330*s);
+            ctx.fillText(lines[1], size/2, 380*s);
+
+            // 4. User Info Box
+            const boxY = 460*s;
+            const boxW = 860*s;
+            const boxH = 400*s;
+            const boxX = (size - boxW) / 2;
+
+            ctx.fillStyle = "rgba(255,255,255,0.08)";
+            ctx.beginPath();
+            ctx.roundRect(boxX, boxY, boxW, boxH, 30*s);
+            ctx.fill();
+            ctx.strokeStyle = "rgba(255,255,255,0.2)";
+            ctx.lineWidth = 2 * s;
+            ctx.stroke();
+
+            ctx.textAlign = "left";
+            const drawInfo = (label, value, y) => {
+                ctx.fillStyle = "#cbd5e1";
+                ctx.font = `600 ${28*s}px 'Montserrat'`;
+                ctx.fillText(label, boxX + 50*s, y);
+                ctx.fillStyle = "#ffffff";
+                ctx.font = `800 ${32*s}px 'Montserrat'`;
+                ctx.fillText(value, boxX + 340*s, y);
+            };
+
+            drawInfo("NAME:", data.name.toUpperCase(), boxY + 70*s);
+            drawInfo("PHONE:", data.phone, boxY + 125*s);
+            drawInfo("GROUP:", data.group.toUpperCase(), boxY + 180*s);
+            drawInfo("INVITATION ID:", generateID(data.name, data.phone), boxY + 235*s);
+
+            // Payment Status
+            const statusY = boxY + 330*s;
+            const statusColors = { "Confirmed": "#00ff88", "Pending": "#ffd700", "Not Paid": "#ff4d4d" };
+            const color = statusColors[data.paymentStatus] || "#cbd5e1";
+            
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.roundRect(boxX + 50*s, statusY - 40*s, 260*s, 60*s, 15*s);
+            ctx.fill();
+            
+            ctx.fillStyle = "#000";
+            ctx.textAlign = "center";
+            ctx.font = `900 ${28*s}px 'Montserrat'`;
+            ctx.fillText(data.paymentStatus.toUpperCase(), boxX + 180*s, statusY + 2*s);
+
+            // 5. VIP Seal
+            if(data.vip) {
+                const sealX = size - 140*s;
+                const sealY = size - 140*s;
+                ctx.save();
+                ctx.translate(sealX, sealY);
+                ctx.fillStyle = "#ffd700";
+                ctx.beginPath();
+                for(let i=0; i<16; i++) {
+                    const angle = (i / 16) * Math.PI * 2;
+                    const r = i % 2 === 0 ? 55*s : 45*s;
+                    ctx.lineTo(Math.cos(angle)*r, Math.sin(angle)*r);
+                }
+                ctx.fill();
+                ctx.fillStyle = "#000";
+                ctx.font = `900 ${28*s}px 'Montserrat'`;
+                ctx.fillText("VIP", 0, 10*s);
+                ctx.restore();
+            }
+
+            // 6. Organized By
+            ctx.textAlign = "left";
+            ctx.fillStyle = "rgba(255,255,255,0.5)";
+            ctx.font = `700 ${26*s}px 'Montserrat'`;
+            ctx.fillText(`ORGANIZED BY: ${EVENT_DETAILS.organizedBy.toUpperCase()}`, 80*s, size - 80*s);
+        }
+
+        async function downloadJPG() {
+            const size = 4096;
+            renderCard(currentUserData, size);
+            canvas.toBlob((blob) => {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `Iftar_4K_${currentUserData.name}.jpg`;
+                a.click();
+                renderCard(currentUserData, 1080);
+            }, "image/jpeg", 1.0);
+        }
+
+        async function downloadPDF() {
+            const size = 4096;
+            renderCard(currentUserData, size);
+            const imgData = canvas.toDataURL("image/jpeg", 1.0);
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`<html><body style="margin:0;"><img src="${imgData}" style="width:100%;"></body></html>`);
+            printWindow.document.close();
+            setTimeout(() => { printWindow.print(); printWindow.close(); }, 500);
+            renderCard(currentUserData, 1080);
+        }
+
+        generateBtn.addEventListener('click', () => {
+            const phone = phoneInput.value.trim();
+            if(!phone) { showToast("ফোন নাম্বার দিন।"); return; }
+
+            // শিট থেকে ইউজার খোঁজা
+            const user = DATABASE.find(d => d.phone === phone);
+            if(!user) { showToast("এই নাম্বারের ডাটা পাওয়া যায়নি।"); return; }
+
+            currentUserData = user;
+            previewPanel.style.display = 'flex';
+            renderCard(user, 1080);
+            showToast("কার্ড তৈরি হয়েছে।");
+            previewPanel.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        resetBtn.addEventListener('click', () => {
+            phoneInput.value = '';
+            previewPanel.style.display = 'none';
+            currentUserData = null;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        document.getElementById('btn-jpg').addEventListener('click', downloadJPG);
+        document.getElementById('btn-pdf').addEventListener('click', downloadPDF);
+        phoneInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') generateBtn.click(); });
+    </script>
+</body>
+</html>
